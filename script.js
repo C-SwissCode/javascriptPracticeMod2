@@ -288,21 +288,60 @@ GOOD LUCK 😀
  * Objects and methods
  */
 
-var john = {
-  firstName: 'John',
-  lastName: 'Smith',
-  birthYear: 1990,
-  family: ['Jane', 'Mark', 'Bob', 'Emily'],
-  job: 'teacher',
-  isMarried: false,
-  calcAge: function () {
-    this.age = 2020 - this.birthYear;
-  }
-};
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1990,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false,
+//   calcAge: function () {
+//     this.age = 2020 - this.birthYear;
+//   }
+// };
 
-john.calcAge();
-console.log(john.age);
+// john.calcAge();
+// console.log(john.age);
 
+
+/*************************
+ * CODING CHALLENGE 1
+ */
+
+/*
+ Mark and John are trying to compare their BMI, which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meters).
+
+ 1. Store Mark's and John's mass and height in variables
+ 2. Calculate both their BMIs
+ 3. Create a boolean variable containing information about whether Mark has a higher BMI than John.
+ 4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true").
+
+ massMark = 150;
+ massJohn = 100;
+ heightMark = 27;
+ heightJohn = 25;
+*/
+
+// var massMark, massJohn, heightMark, heightJohn;
+// var BMI_Mark, BMI_John, isMarksGreater;
+
+// massMark = 150;
+// massJohn = 100;
+// heightMark = 27;
+// heightJohn = 25;
+
+// BMI_Mark = massMark / heightMark ** 2;
+// BMI_John = massJohn / heightJohn ** 2;
+// console.log(BMI_Mark, BMI_John);
+
+// isMarksGreater = BMI_Mark > BMI_John;
+// // console.log("Is Mark's BMI higher than John's?" + ' ' + isMarksGreater);
+
+// if (isMarksGreater) {
+//   console.log('Mark\'s BMI is higher than John\'s BMI.');
+// } else {
+//   console.log('Actually John has the higher BMI!!!');
+// }
 
 /*****************************
  * CODING CHALLENGE 4
@@ -318,3 +357,36 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 
 GOOD LUCK 😀
 */
+
+// Creating the objects
+
+var john = {
+  fullName: 'John Smith',
+  mass: 100,
+  height: 25,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  }
+};
+
+var mark = {
+  fullName: 'Mark Holbrook',
+  mass: 150,
+  height: 27,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  }
+};
+
+
+if (john.calcBMI() > mark.calcBMI()) {
+  console.log(john.fullName + ' has a higher BMI!');
+} else if (mark.BMI > john.BMI) {
+  console.log(mark.fullName + ' has a higher BMI!');
+} else {
+  console.log('Their BMIs are equal');
+}
+
+console.log(john.BMI, mark.BMI);
