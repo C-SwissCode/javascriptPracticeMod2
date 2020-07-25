@@ -212,41 +212,74 @@ GOOD LUCK 😀
 
 // Calculation Functions
 
-tipCalc = function (bill) {
-  var percentage;
-  if (bill < 50) {
-    percentage = .2;
-  } else if (bill >= 50 && bill <= 200) {
-    percentage = .15;
-  } else {
-    percentage = .1;
-  }
-  return bill * percentage;
-}
+// tipCalc = function (bill) {
+//   var percentage;
+//   if (bill < 50) {
+//     percentage = .2;
+//   } else if (bill >= 50 && bill <= 200) {
+//     percentage = .15;
+//   } else {
+//     percentage = .1;
+//   }
+//   return bill * percentage;
+// }
 
-var totalCalc = function (subtotal, tip) {
-  return subtotal + tip;
-}
+// var totalCalc = function (subtotal, tip) {
+//   return subtotal + tip;
+// }
 
-// Arrays
+// // Arrays
 
-var subsJohn = [124, 48, 268];
+// var subsJohn = [124, 48, 268];
 
-var tips = [];
-var totalBills = [];
+// var tips = [];
+// var totalBills = [];
 
-// 2 ways to add the values to the arrays
-tips.push(tipCalc(subsJohn[0]), tipCalc(subsJohn[1]), tipCalc(subsJohn[2]));
-tips = [tipCalc(subsJohn[0]),
-  tipCalc(subsJohn[1]),
-  tipCalc(subsJohn[2])
-];
+// // 2 ways to add the values to the arrays
+// tips.push(tipCalc(subsJohn[0]), tipCalc(subsJohn[1]), tipCalc(subsJohn[2]));
+// tips = [tipCalc(subsJohn[0]),
+//   tipCalc(subsJohn[1]),
+//   tipCalc(subsJohn[2])
+// ];
 
-totalBills.push(totalCalc(subsJohn[0], tips[0]), totalCalc(subsJohn[1], tips[1]), totalCalc(subsJohn[2], tips[2]));
-totalBills = [subsJohn[0] + tips[0],
-  subsJohn[1] + tips[1],
-  subsJohn[2] + tips[2]
-];
+// totalBills.push(totalCalc(subsJohn[0], tips[0]), totalCalc(subsJohn[1], tips[1]), totalCalc(subsJohn[2], tips[2]));
+// totalBills = [subsJohn[0] + tips[0],
+//   subsJohn[1] + tips[1],
+//   subsJohn[2] + tips[2]
+// ];
 
-console.log(tips);
-console.log(totalBills);
+// console.log(tips);
+// console.log(totalBills);
+
+
+/**********************************
+ * Objects and properties
+ */
+
+// Object literal
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false
+};
+console.log(john.family);
+console.log(john['lastName']);
+
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john.job)
+console.log(john.isMarried);
+
+// new Object syntax
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1989;
+jane['lastName'] = 'Johnson';
+console.log(jane);
