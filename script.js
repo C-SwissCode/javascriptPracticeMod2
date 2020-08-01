@@ -390,3 +390,13 @@ if (john.calcBMI() > mark.calcBMI()) {
 }
 
 console.log(john.BMI, mark.BMI);
+
+var a = function b(i) {
+  if (i > 10) {
+    return i;
+  } else {
+    return b(++i);
+  }
+}
+
+console.log(a(5));
