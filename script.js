@@ -481,9 +481,9 @@ GOOD LUCK 😀
 var johnEating = {
   fullName: 'John Jacob Smith',
   subBills: [124, 48, 268, 180, 42],
-  tips: [],
-  totals: [],
   calcTip: function () {
+    this.tips = [];
+    this.totals = [];
     var calculatingTheTip = function (subs) {
       var percentage;
       if (subs < 50) {
@@ -528,8 +528,8 @@ var markEating = {
     }
 
     for (i = 0; i < this.subBills.length; i++) {
-      this.tips.push(calculatingTheTip(this.subBills[i]));
-      this.totals.push(this.subBills[i] + this.tips[i]);
+      this.tips[i] = calculatingTheTip(this.subBills[i]);
+      this.totals[i] = this.subBills[i] + this.tips[i];
     }
     return this.tips;
   }
@@ -540,24 +540,50 @@ console.log(markEating.calcTip());
 console.log(markEating.fullName + ' totals:');
 console.log(markEating.totals);
 
-var avgTipCalc = function (...tipAmmounts) {
-  var tipsArry = tipAmmounts;
+
+// Average tip calculations and evaluations
+
+// var avgTipCalc = function (...tipAmmounts) {
+//   var tipsArry = tipAmmounts;
+//   var totalTips = 0;
+//   for (i = 0; i < tipsArry.length; i++) {
+//     totalTips += tipsArry[i];
+//   }
+//   return totalTips / tipsArry.length;
+// }
+
+// johnEating.avgTip = avgTipCalc(...johnEating.tips);
+// markEating.avgTip = avgTipCalc(...markEating.tips);
+
+// if (johnEating.avgTip > markEating.avgTip) {
+//   console.log(johnEating.fullName + ' has a higher avg tip than ' + markEating.fullName);
+//   console.log('John\'s Avg Tip: ' + johnEating.avgTip + '\n' + 'Mark\'s Avg Tip: ' + markEating.avgTip);
+// } else if (markEating.avgTip > johnEating.avgTip) {
+//   console.log(markEating.fullName + ' has a higher avg tip than ' + johnEating.fullName);
+//   console.log('Mark\'s Avg Tip: ' + markEating.avgTip + '\n' + 'John\'s Avg Tip: ' + johnEating.avgTip);
+// } else {
+//   console.log('Their avg tips are the same! wow');
+// }
+
+// Average tip calculations and evaluations
+var avgTipCalc = function (tipAmmounts) {
+  // var tipsArry = tipAmmounts;
   var totalTips = 0;
-  for (i = 0; i < tipsArry.length; i++) {
-    totalTips += tipsArry[i];
+  for (i = 0; i < tipAmmounts.length; i++) {
+    totalTips += tipAmmounts[i];
   }
-  return totalTips / tipsArry.length;
+  return totalTips / tipAmmounts.length;
 }
 
-var johnsAvgTip = avgTipCalc(...johnEating.tips);
-var marksAvgTip = avgTipCalc(...markEating.tips);
+johnEating.avgTip = avgTipCalc(johnEating.tips);
+markEating.avgTip = avgTipCalc(markEating.tips);
 
-if (johnsAvgTip > marksAvgTip) {
+if (johnEating.avgTip > markEating.avgTip) {
   console.log(johnEating.fullName + ' has a higher avg tip than ' + markEating.fullName);
-  console.log('John\'s Avg Tip: ' + johnsAvgTip + '\n' + 'Mark\'s Avg Tip: ' + marksAvgTip);
-} else if (marksAvgTip > johnsAvgTip) {
+  console.log('John\'s Avg Tip: ' + johnEating.avgTip + '\n' + 'Mark\'s Avg Tip: ' + markEating.avgTip);
+} else if (markEating.avgTip > johnEating.avgTip) {
   console.log(markEating.fullName + ' has a higher avg tip than ' + johnEating.fullName);
-  console.log('Mark\'s Avg Tip: ' + marksAvgTip + '\n' + 'John\'s Avg Tip: ' + johnsAvgTip);
+  console.log('Mark\'s Avg Tip: ' + markEating.avgTip + '\n' + 'John\'s Avg Tip: ' + johnEating.avgTip);
 } else {
   console.log('Their avg tips are the same! wow');
 }
