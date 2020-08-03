@@ -566,24 +566,23 @@ console.log(markEating.totals);
 // }
 
 // Average tip calculations and evaluations
-var avgTipCalc = function (tipAmmounts) {
-  // var tipsArry = tipAmmounts;
-  var totalTips = 0;
-  for (i = 0; i < tipAmmounts.length; i++) {
-    totalTips += tipAmmounts[i];
-  }
-  return totalTips / tipAmmounts.length;
-}
+// var avgTipCalc = function (tipAmmounts) {
+//   var totalTips = 0;
+//   for (i = 0; i < tipAmmounts.length; i++) {
+//     totalTips += tipAmmounts[i];
+//   }
+//   return totalTips / tipAmmounts.length;
+// }
 
-johnEating.avgTip = avgTipCalc(johnEating.tips);
-markEating.avgTip = avgTipCalc(markEating.tips);
+// johnEating.avgTip = avgTipCalc(johnEating.tips);
+// markEating.avgTip = avgTipCalc(markEating.tips);
 
-if (johnEating.avgTip > markEating.avgTip) {
-  console.log(johnEating.fullName + ' has a higher avg tip than ' + markEating.fullName);
-  console.log('John\'s Avg Tip: ' + johnEating.avgTip + '\n' + 'Mark\'s Avg Tip: ' + markEating.avgTip);
-} else if (markEating.avgTip > johnEating.avgTip) {
-  console.log(markEating.fullName + ' has a higher avg tip than ' + johnEating.fullName);
-  console.log('Mark\'s Avg Tip: ' + markEating.avgTip + '\n' + 'John\'s Avg Tip: ' + johnEating.avgTip);
-} else {
-  console.log('Their avg tips are the same! wow');
-}
+// if (johnEating.avgTip > markEating.avgTip) {
+//   console.log(johnEating.fullName + ' has a higher avg tip than ' + markEating.fullName);
+//   console.log('John\'s Avg Tip: ' + johnEating.avgTip + '\n' + 'Mark\'s Avg Tip: ' + markEating.avgTip);
+// } else if (markEating.avgTip > johnEating.avgTip) {
+//   console.log(markEating.fullName + ' has a higher avg tip than ' + johnEating.fullName);
+//   console.log('Mark\'s Avg Tip: ' + markEating.avgTip + '\n' + 'John\'s Avg Tip: ' + johnEating.avgTip);
+// } else {
+//   console.log('Their avg tips are the same! wow');
+// }
